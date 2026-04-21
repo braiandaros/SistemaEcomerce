@@ -25,7 +25,7 @@ Uma API REST desenvolvida em Java com Spring Boot para gerenciar o catálogo e e
 
 1. **Clone o repositório:**
 ```bash
-git clone [https://github.com/braiandaros/SistemaEcommerce.git](https://github.com/braiandaros/SistemaEcommerce.git)
+git clone [https://github.com/braiandaros/SistemaEcommerce.git]
 cd SistemaEcommerce
 ```
 
