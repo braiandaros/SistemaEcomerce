@@ -25,5 +25,41 @@ Uma API REST desenvolvida em Java com Spring Boot para gerenciar o catálogo e e
 
 1. **Clone o repositório:**
 ```bash
-git clone [https://github.com/SEU-USUARIO/SistemaEcommerce.git](https://github.com/SEU-USUARIO/SistemaEcommerce.git)
+git clone [https://github.com/braiandaros/SistemaEcommerce.git](https://github.com/braiandaros/SistemaEcommerce.git)
 cd SistemaEcommerce
+```
+
+2. **Suba o Banco de Dados (Docker):**
+```bash
+docker-compose up -d
+```
+
+3. **Inicie a Aplicação (Spring Boot):**
+```bash
+./mvnw spring-boot:run
+```
+> A API estará disponível em: `http://localhost:8080`
+
+---
+
+## 🛠️ Endpoints da API (CRUD de Produtos)
+
+| Método | Rota | Descrição |
+|---|---|---|
+| `POST` | `/api/produtos` | Cadastra um novo produto |
+| `GET` | `/api/produtos` | Lista todos os produtos cadastrados |
+| `GET` | `/api/produtos/{id}` | Busca um produto específico pelo ID |
+| `PUT` | `/api/produtos/{id}` | Atualiza os dados de um produto existente |
+| `DELETE` | `/api/produtos/{id}` | Deleta um produto do banco de dados |
+
+### Exemplo de Payload (JSON)
+Para cadastrar ou atualizar um produto, envie o seguinte corpo na requisição:
+```json
+{
+  "nome": "Monitor 27 Polegadas",
+  "preco": 1500.00
+}
+```
+
+---
+*Desenvolvido com dedicação por [Braian Daros](https://github.com/braiandaros).*
