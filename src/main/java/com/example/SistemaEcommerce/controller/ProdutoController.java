@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/produtos")
@@ -18,7 +19,7 @@ public class ProdutoController {
 
     // POST: Criar
     @PostMapping
-    public ResponseEntity<Produto> criarProduto(@RequestBody Produto produto) {
+    public ResponseEntity<Produto> criarProduto(@Valid @RequestBody Produto produto) {
         Produto novoProduto = service.salvar(produto);
         return ResponseEntity.ok(novoProduto);
     }
@@ -41,7 +42,7 @@ public class ProdutoController {
 
     // PUT: Atualizar
     @PutMapping("/{id}")
-    public ResponseEntity<Produto> atualizarProduto(@PathVariable Long id, @RequestBody Produto produto) {
+    public ResponseEntity<Produto> atualizarProduto(@PathVariable Long id, @Valid @RequestBody Produto produto) {
         Produto produtoAtualizado = service.atualizar(id, produto);
         if (produtoAtualizado != null) {
             return ResponseEntity.ok(produtoAtualizado);
