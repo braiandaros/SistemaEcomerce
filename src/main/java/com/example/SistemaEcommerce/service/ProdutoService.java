@@ -46,4 +46,13 @@ public class ProdutoService {
         }
         return false;
     }
+    
+    public List<Produto> buscarPorCategoria(Long categoriaId) {
+        return repository.findByCategoriaId(categoriaId);
+    }
+    
+    // Método para a barra de pesquisa
+    public List<Produto> buscarPorNome(String nome) {
+        return repository.findByNomeContainingIgnoreCase(nome);
+    }
 }
