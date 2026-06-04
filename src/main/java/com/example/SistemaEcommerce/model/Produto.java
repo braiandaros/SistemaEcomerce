@@ -16,12 +16,14 @@ public class Produto {
     @NotBlank(message = "O nome do produto não pode ficar em branco!")
     private String nome;
     
-    @NotBlank(message = "O código SKU é obrigatório!") // <-- Adicione isto
+    @NotBlank(message = "O código SKU é obrigatório!")
     private String sku;
 
     @NotNull(message = "O preço é obrigatório!")
     @Positive(message = "O preço deve ser maior que zero!")
     private Double preco;
+    
+    private Integer quantidadeEstoque;
 
     @ManyToOne
     @JoinColumn(name = "categoria_id")
@@ -68,4 +70,7 @@ public class Produto {
     public void setSku(String sku) {
         this.sku = sku;
     }
+    
+    public Integer getQuantidadeEstoque() { return quantidadeEstoque; }
+    public void setQuantidadeEstoque(Integer quantidadeEstoque) { this.quantidadeEstoque = quantidadeEstoque; }
 }

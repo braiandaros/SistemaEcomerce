@@ -47,6 +47,7 @@ public class ProdutoService {
         return false;
     }
     
+    
     public List<Produto> buscarPorCategoria(Long categoriaId) {
         return repository.findByCategoriaId(categoriaId);
     }

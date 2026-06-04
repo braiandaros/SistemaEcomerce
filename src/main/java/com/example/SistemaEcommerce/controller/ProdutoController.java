@@ -82,13 +82,8 @@ public class ProdutoController {
     }
     
     // GET: Buscar produtos por nome (Barra de pesquisa)
-    @GetMapping("/busca")
-    public ResponseEntity<List<Produto>> buscarPorNome(@RequestParam String nome) {
-        List<Produto> produtos = service.buscarPorNome(nome);
-        
-        if (produtos.isEmpty()) {
-            return ResponseEntity.noContent().build(); // Retorna 204 se não achar nada
-        }
-        return ResponseEntity.ok(produtos);
+    @GetMapping("/buscar")
+    public ResponseEntity<List<Produto>> buscarProdutosPorNome(@RequestParam String nome) {
+        return ResponseEntity.ok(service.buscarPorNome(nome));
     }
 }
